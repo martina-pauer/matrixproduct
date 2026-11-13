@@ -9,18 +9,18 @@ class Matrix:
       matrix.append([])
       for column in range(0, columns):
         matrix[row].append(0)
-    
- def add_component(self, component: float, row: int, column: int):
-   '''
-     Add a component in position row and column
-  '''
-   self.matrix[row][column] = component
+        
+  def add_component(self, component: float, row: int, column: int):
+    '''
+      Add a component in position row and column
+    '''
+    self.matrix[row][column] = component
 
 def get_row(self, position: int) -> list[float]:
-  '''
-    Give the row in that position
-  '''
-  return self.matrix[position]
+    '''
+      Give the row in that position
+    '''
+    return self.matrix[position]
 
 def get_column(self, position: int) -> list[float]:
   '''
