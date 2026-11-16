@@ -3,12 +3,12 @@ class Matrix:
     '''
       Define a matrix with components
     '''
-    matrix: list = []
+    self.matrix: list = []
     # Complete with zeros to set later the components
     for row in range(0, rows):
-      matrix.append([])
+      self.matrix.append([])
       for column in range(0, columns):
-        matrix[row].append(0)
+        self.matrix[row].append(0)
         
   def add_component(self, component: float, row: int, column: int):
     '''
@@ -27,9 +27,9 @@ def get_column(self, position: int) -> list[float]:
     Give the column in that position
   '''
   column: list[float] = []
-  for row in range(0, matrix.__len__()):
-    column.append(matrix[row][position])
-  return clumn
+  for row in range(0, self.matrix.__len__()):
+    column.append(self.matrix[row][position])
+  return column
 
 
 class Product:

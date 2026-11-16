@@ -37,7 +37,7 @@ def matrix_input() -> str:
     
     for rows in range(0, A.matrix.__len__()):
         for columns in range(0, A.matrix[0].__len__):
-            A_components += f'<input type = "text" id = "a{rows}{columns}" />'
+            A_components += f'<input type = "text" name = "a{rows}{columns}" />'
             if request.method == 'POST':
                 A.add_component(int(request.form[f'a{rows}{columns}']))
                 
@@ -45,7 +45,7 @@ def matrix_input() -> str:
     
     for rows in range(0, B.matrix.__len__()):
         for columns in range(0, B.matrix[0].__len__):
-            B_components += f'<input type = "text" id = "b{rows}{columns}" />'
+            B_components += f'<input type = "text" name = "b{rows}{columns}" />'
             if request.method == 'POST':
                 B.add_component(int(request.form[f'b{rows}{columns}']))
                 
