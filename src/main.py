@@ -25,7 +25,7 @@ def set_size() -> str:
 
     return text
 
-@web.route('/matrix-input')
+@web.route('/matrix-input', methods = ['GET', 'POST'])
 def matrix_input() -> str:
     text: str = ''
     
@@ -65,4 +65,15 @@ def result() -> str:
         for line in file.readlines():
             text += line
 
+    result = ''
+
+    product = Product(A, B)
+    product.get_components()
+    C = product.C
+
+    for row in range(0, C.matrix.__len__()):
+        result += C.get_row(row).__str__().replace('[', '<p>').replace(']</p>', '<br />')
+
+    text = text.replace('[RESULT]', result)
+        
     return text
