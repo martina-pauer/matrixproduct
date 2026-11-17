@@ -1,3 +1,6 @@
+row: int = 0
+column: int = 0
+
 class Matrix:
   def __init__(self, rows: int, columns: int):
     '''
@@ -10,11 +13,20 @@ class Matrix:
       for column in range(0, columns):
         self.matrix[row].append(0)
         
-  def add_component(self, component: float, row: int, column: int):
+  def add_component(self, component: float):
     '''
       Add a component in position row and column
     '''
     self.matrix[row][column] = component
+    # Add Component in last space
+    if row < (self.matrix.__len__() - 1):
+      row += 1
+    else:
+      row = 0
+    if column < (self.matrix[0].__len__() - 1):
+      column += 1
+    else:
+      column = 0
 
 def get_row(self, position: int) -> list[float]:
     '''
